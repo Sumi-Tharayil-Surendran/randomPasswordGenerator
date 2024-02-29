@@ -1,5 +1,5 @@
  function generatePass(){
-    let words=['sumi','tharayil','layali','neethu','rohini'];
+    let words=['sumi','tharayil','layali','neethu','rohini','fajar'];
     let numbers=[0,1,2,3,4,5,6,7,8,9]
     let symbols=["!","@","?","#","$","%","&","*",":"]
     let sentence = words[Math.floor(Math.random() *words.length)]
@@ -15,4 +15,12 @@
     let txt = document.getElementById("txt");
     txt.value = `${sentence}${randomNum1}${randomNum2}${symbol1}${symbol2}`;
  }
- generatePass()
+//  generatePass()
+ function copytoClip(){
+    let copy = document.getElementById("txt");
+    copy.select();
+    copy.setSelectionRange(0,9999)
+    navigator.clipboard.writeText(copy.value);
+    alert(copy.value)
+    
+ }
